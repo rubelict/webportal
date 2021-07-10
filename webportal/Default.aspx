@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Pages/MainMaster.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="webportal.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Pages/MainMaster.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="webportal.Default" EnableViewState="true" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <style>
@@ -13,29 +13,44 @@
         }
     </style>
   
-
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" runat="server">
     <div id="content-header">
     <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Web Portal 2021</a></div>
   </div>
      <div class="container-fluid">
-   	<div class="quick-actions_homepage">
-    <ul class="quick-actions">
-          <li> <a href="#"> <i class="icon-dashboard"></i> My Dashboard </a> </li>
-          <li> <a href="#"> <i class="icon-shopping-bag"></i> Shopping Cart</a> </li>
-          <li> <a href="#"> <i class="icon-web"></i> Web Marketing </a> </li>
-          <li> <a href="#"> <i class="icon-people"></i> Manage Users </a> </li>
-          <li> <a href="#"> <i class="icon-calendar"></i> Manage Events </a> </li>
-        </ul>
-   </div>
+   	
    
+         
+         <div class="row-fluid">
+              <div id="Content">  
+    </div> 
+             <div class="span3">
+		
+             </div>
 
+             <div class="span6">
+                   <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
+                   <asp:Label ID="lbljason" runat="server" Text=""></asp:Label>
+               <div class="form-horizontal" >
+                                    <div class="control-group">
+                                        <label class="control-label">Select</label>
+                                        <div class="controls">
+              
+                                            <asp:DropDownList ID="ddlcompany" AutoPostBack="True" runat="server" OnSelectedIndexChanged="ddlcompany_SelectedIndexChanged"></asp:DropDownList>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                
+              </div>
+             </div>
          <div class="row-fluid">
       <div class="span4">
       <div class="widget-box">
           <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-            <h5>Real Time Data : ACI</h5>
+            <h5>Real Time Data  <asp:Label ID="lblRealTimeTitle" runat="server" Text=""></asp:Label></h5>
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered">
@@ -43,6 +58,7 @@
                 <tr>
                   <th>B_Ord</th>
                   <th>B_Qt</th>
+                    
                   <th>B_Rate</th>
                   <th>S_Rate</th>
                   <th>S_Qt</th>
@@ -50,78 +66,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                  <td class="ofgn">242.3</td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
-                <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                  <td class="ofgn">242.3</td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
-                  <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                 <td class="ofgn">242.3</td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
-                  <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                  <td class="ofgn">242.3</td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
-                  <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                   <td class="ofgn">242.3</td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
-                  <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                 <td class="ofgn">242.3</td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
-                  <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                  <td class="ofgn">242.3</td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
-                  <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                  <td class="ofgn">242.3</td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
-                  <tr>
-                  <td class="ofgn">1</td>
-                  <td class="ofgn">100</td>
-                  <td class="ofgn">242.3/td>
-                  <td class="ofrd"> 270</td>
-                  <td class="ofrd">500</td>
-                  <td class="ofrd">1</td>
-                </tr>
+                  <asp:Literal ID="ltlTableBody" runat="server"></asp:Literal>
+             
               </tbody>
             </table>
               <table class="table hidescrip" style="color: black;">
@@ -172,12 +118,22 @@
 
               <tbody>
                   <tr>
+                      <td>User Id</td>
+                      <td>
+                          
+                            <asp:TextBox ID="txtUserid" class="form-control"  runat="server"></asp:TextBox> 
+                      </td>
+                  </tr>
+                  <tr>
                       <td style="width: 35%">
                           <div>Trade Type</div>
                       </td>
                       <td style="text-align: center">
-                          <button class="btn btn-success">BUY</button>
-                          <button class="btn btn-danger">SELL</button>
+                         
+                           <asp:DropDownList ID="ddlTrdType" class="form-control" runat="server">
+                            <asp:ListItem Value="1">Buy</asp:ListItem>
+                            <asp:ListItem Value="2">Sell</asp:ListItem>
+                        </asp:DropDownList>
 
                       </td>
 
@@ -194,11 +150,12 @@
                       <td>
                           <div class="d-flex justify-content-between align-items-center">
                               <div>
-                                  <input onkeypress="return isNumberInt(event)" id="txtQt" class="form-control" style="font-size: Large; font-weight: bold; width: 90px; float: left;">
+                                  <asp:TextBox ID="txtQty" class="form-control" runat="server" style=" width: 90px; float: left;" type="number" ></asp:TextBox>
+                              
                               </div>
                               <div id="dvbOr" style="float: left; padding: 0px 7px">OR</div>
                               <div>
-                                  <input onkeypress="return isNumberInt(event)" id="txtinvstAmnt" class="form-control" style="font-size: large; width: 100px; color: blue; float: left;" placeholder="Taka">
+                                  <input  readonly="readonly" id="txtinvstAmnt" class="form-control" style="width: 100px; color: blue; float: left;" placeholder="Taka">
                               </div>
                           </div>
 
@@ -209,11 +166,11 @@
                       <td>
                           <div class="d-flex justify-content-between align-items-center">
                               <div>
-                                  <input id="txtRate"
-                                      class="form-control" style="font-size: Large; font-weight: bold; width: 90px; float: left;">
+                                  <asp:TextBox ID="txtRate" type="number" class="form-control" style="font-size: Large; font-weight: bold; width: 90px; float: left;" runat="server"></asp:TextBox> 
                               </div>
                               <div id="divchkbox" style="padding: 0px 7px; float: left;">
-                                  <input type="checkbox" class="form-check-input" id="chkMarket">
+                                  <asp:checkbox runat="server" ID="chkMarket" onclick="ShowHideDiv(this)"></asp:checkbox>
+
                               </div>
                               <p>Market Price</p>
                           </div>
@@ -229,24 +186,121 @@
       
                 
       <tr>
-        <td colspan="3" style="text-align:center"><button id="btnBS" class="btn btn-lg waves-effect waves-light btn-success">SUBMIT</button></td>
+        <td colspan="3" style="text-align:center">
+           <%-- <button id="btnBS" class="btn btn-lg waves-effect waves-light btn-success">SUBMIT</button>--%>
+             <asp:Button ID="btnSubmit" OnClick="btnSaveDpt_Click" class="btn btn-lg waves-effect waves-light btn-success" runat="server" Text="Submit" />
+
+        </td>
       </tr>
    
    
               </tbody>
           </table>
           </div>
-          <%--<div class="widget-title" style="background-color:#5D2479 !important"> 
-            <h5>Trade</h5>
+        </div>
+      </div>
+                 <div class="span4">
+      <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+            <h5>Real Time </h5>
           </div>
-          <div class="card-footer py-1 text-center">
-                        <button id="btnBS" class="btn btn-lg waves-effect waves-light btn-success">SUBMIT</button>
-                    </div>--%>
+          <div class="widget-content nopadding">
+              <asp:GridView ID="GridView1" runat="server" >
+                                    
+                    </asp:GridView>
 
+          </div>
         </div>
       </div>
     </div>
-    
-    
+         <div class="row-fluid">
+             <div class="span4">
+      <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+            <h5>Latest Trade  <asp:Label ID="lblLatestTrade" runat="server" Text=""></asp:Label></h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Price</th>
+                  <th>Volume</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <asp:Literal ID="ltlLatestTrades" runat="server"></asp:Literal>
+             
+              </tbody>
+            </table>
+          
+          </div>
+        </div>
+      </div>
+
+              <div class="span6">
+      <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+            <h5>Order History </h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                   <th>Symbol</th>
+                  <th>Order Status</th>
+                  <th>Side</th>
+                  <th>Order Type</th>
+                   <th>Quanity</th>
+                   <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <asp:Literal ID="ltlOrderHistory" runat="server"></asp:Literal>
+             
+              </tbody>
+            </table>
+          
+          </div>
+        </div>
+      </div>
+               </div>
+         
+
+        
   </div>
+
+      <script type="text/javascript">
+
+          function ShowHideDiv(chkMarket) {
+              var id = "<%: txtRate.ClientID %>";
+              id = "#" + id;
+
+              if (chkMarket.checked) {
+                      $(id).val("");
+                      $(id).attr("disabled", "disabled");
+                  }
+                  else {
+                      $(id).removeAttr("disabled");
+                      $(id).focus();
+                  }
+              /*});*/
+          }
+
+        <%--$(function () {
+            var id = "<%: txtRate.ClientID %>";
+            id = "#" + id;
+            $("#chkMarket").change(function () {
+                if (this.checked) {
+                    $(id).val("");
+                    $(id).attr("disabled", "disabled");
+                }
+                else{
+                    $(id).removeAttr("disabled");
+                    $(id).focus();
+                }
+            });
+        });--%>
+      </script>
+   
 </asp:Content>

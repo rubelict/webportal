@@ -14,4 +14,28 @@
         <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
         <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
     </address>
+
+
+    <asp:DropDownList ID="ddlCustomers" runat="server">
+    </asp:DropDownList>
+   <%-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>--%>
+    <script type="text/javascript">
+        $(function () {
+            debugger;
+            $.ajax({
+                type: "POST",
+                url: "/Contact.aspx/GetCustomers",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    var ddlCustomers = $("[id*=ddlCustomers]");
+                    ddlCustomers.empty().append('<option selected="selected" value="0">Please select</option>');
+                    $.each(r.d, function () {
+                        ddlCustomers.append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+                }
+            });
+        });
+    </script>
 </asp:Content>

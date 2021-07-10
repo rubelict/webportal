@@ -7,9 +7,15 @@
     <title></title>
     <link rel="stylesheet" href="/Content/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/Content/css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="/Content/css/fullcalendar.css" />
+<link rel="stylesheet" href="/Content/css/uniform.css" />
 <link rel="stylesheet" href="/Content/css/maruti-style.css" />
+<%--<link rel="stylesheet" href="/Content/css/select2.css" />--%>
 <link rel="stylesheet" href="/Content/css/maruti-media.css" class="skin-color" />
+
+            <script src="/Scripts/js/excanvas.min.js"></script> 
+<script src="/Scripts/js/jquery.min.js"></script> 
+<script src="/Scripts/js/jquery.ui.custom.js"></script> 
+<script src="/Scripts/js/bootstrap.min.js"></script> 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -81,17 +87,18 @@
   <div id="footer" class="span12"> Admin Panel </div>
 </div>
 
-        <script src="/Scripts/js/excanvas.min.js"></script> 
+<%--        <script src="/Scripts/js/excanvas.min.js"></script> 
 <script src="/Scripts/js/jquery.min.js"></script> 
 <script src="/Scripts/js/jquery.ui.custom.js"></script> 
-<script src="/Scripts/js/bootstrap.min.js"></script> 
-<script src="/Scripts/js/jquery.flot.min.js"></script> 
-<script src="/Scripts/js/jquery.flot.resize.min.js"></script> 
+<script src="/Scripts/js/bootstrap.min.js"></script> --%>
+<%--<script src="/Scripts/js/jquery.flot.min.js"></script> 
+<script src="/Scripts/js/jquery.flot.resize.min.js"></script> --%>
 <script src="/Scripts/js/jquery.peity.min.js"></script> 
-<script src="/Scripts/js/fullcalendar.min.js"></script> 
+<%--<script src="/Scripts/js/fullcalendar.min.js"></script> 
+<script src="/Scripts/js/select2.min.js"></script> --%>
 <script src="/Scripts/js/maruti.js"></script> 
-<script src="/Scripts/js/maruti.dashboard.js"></script> 
-<script src="/Scripts/js/maruti.chat.js"></script> 
+<%--<script src="/Scripts/js/maruti.dashboard.js"></script> --%>
+<%--<script src="/Scripts/js/maruti.chat.js"></script> --%>
        
     </form>
 </body>

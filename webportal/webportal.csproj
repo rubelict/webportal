@@ -123,6 +123,7 @@
     <Content Include="Content\css\select2.css" />
     <Content Include="Content\css\uniform.css" />
     <Content Include="Content\img\alpha.png" />
+    <Content Include="Content\img\bodyBg.png" />
     <Content Include="Content\img\breadcrumb.png" />
     <Content Include="Content\img\css-border-bg.jpg" />
     <Content Include="Content\img\demo\av1.jpg" />
@@ -203,6 +204,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\css\.listing" />
+    <Content Include="heloo.asmx" />
     <Content Include="Master_Pages\MainMaster.Master" />
     <Content Include="Content\img\.listing" />
     <Content Include="Content\img\demo\.listing" />
@@ -270,6 +272,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Services\Companyservices.asmx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -278,6 +281,7 @@
     <Content Include="Scripts\js\.listing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\HelperClass.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -304,6 +308,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="heloo.asmx.cs">
+      <DependentUpon>heloo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HelperClass.cs" />
     <Compile Include="Master_Pages\MainMaster.Master.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -312,6 +321,10 @@
       <DependentUpon>MainMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Companyservices.asmx.cs">
+      <DependentUpon>Companyservices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
